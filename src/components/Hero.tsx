@@ -23,7 +23,7 @@ export default function Hero() {
         </Suspense>
       </div>
       <div className="wrap hero-inner">
-        <h1 id="hero-title" className={TITLE_RED ? "title-red" : undefined}>Specific intelligence</h1>
+        <h1 id="hero-title" className={TITLE_RED ? "title-red" : undefined}>Arcanum</h1>
         <p className="lead">
           {TAGLINE_LINES.map((line) => (
             <span key={line}>{line}</span>

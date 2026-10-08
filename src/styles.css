@@ -161,6 +161,13 @@ a {
   font-weight: 500;
   font-size: 1.5rem;
   letter-spacing: -0.03em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.brand.is-visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 .brand svg {
   display: block;
