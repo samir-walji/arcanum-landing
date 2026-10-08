@@ -17,9 +17,13 @@ function Bar({ value, kind, digits = 1 }: { value: number; kind: "us" | "them"; 
   );
 }
 
+/** The case study sits on charcoal grey. ?case=light gives white, ?case=crimson deep red. */
+const CASE_PARAM = new URLSearchParams(window.location.search).get("case");
+const CASE_THEME = CASE_PARAM === "light" ? "light" : CASE_PARAM === "crimson" ? "crimson" : "raised";
+
 export default function Results() {
   return (
-    <section className="section" id="results" data-theme="light" aria-labelledby="results-title">
+    <section className="section" id="results" data-theme={CASE_THEME} aria-labelledby="results-title">
       <div className="wrap">
         <div className="case-top">
         <div className="sec-head">

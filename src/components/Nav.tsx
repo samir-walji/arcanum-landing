@@ -21,7 +21,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="nav">
+    <header className={`nav${showBrand ? " is-solid" : ""}`}>
       <div className="wrap nav-inner">
         <a className={`brand${showBrand ? " is-visible" : ""}`} href="#top" aria-label="Arcanum home" tabIndex={showBrand ? 0 : -1}>
           Arcanum
