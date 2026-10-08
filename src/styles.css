@@ -1,15 +1,15 @@
 /* ---------- Tokens ---------- */
 :root {
-  --bg: #060506;
-  --bg-glass: rgba(6, 5, 6, 0.72);
+  --bg: #0e0e0e;
+  --bg-glass: rgba(14, 14, 14, 0.72);
   --ink: #f5f1f2;
   --muted: #9b9295;
   --line: rgba(255, 255, 255, 0.13);
   --red: #e02a3f;
   --red-deep: #a3182a;
   --bar-muted: #4b4447;
-  --scrim-strong: rgba(6, 5, 6, 0.78);
-  --scrim-soft: rgba(6, 5, 6, 0.55);
+  --scrim-strong: rgba(14, 14, 14, 0.78);
+  --scrim-soft: rgba(14, 14, 14, 0.55);
   --hero-fallback: radial-gradient(60% 80% at 75% 55%, #5c101c 0%, #1c070b 48%, var(--bg) 82%);
   /* How strongly the hero grain shows. Lower in dark mode so the text stays forward. */
   --hero-art-opacity: 0.68;

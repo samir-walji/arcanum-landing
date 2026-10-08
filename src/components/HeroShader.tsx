@@ -6,7 +6,7 @@ import type { Theme } from "../theme";
 
 /** Ink colors per theme. Deeper tones on white so the grain keeps its weight. */
 const PALETTE: Record<Theme, { red: string; purple: string; purpleOpacity: number }> = {
-  dark: { red: "#e02a3f", purple: "#6527b8", purpleOpacity: 1 },
+  dark: { red: "#e02a3f", purple: "#6527b8", purpleOpacity: 0.65 },
   light: { red: "#b3172d", purple: "#8b2cf0", purpleOpacity: 0.5 },
 };
 
@@ -78,7 +78,7 @@ function Grain({ color, reach, opacity = 1, stops, movement, seed }: GrainProps)
       colorB={color}
       opacity={opacity}
     >
-      <Twirl center={follow(0.6, 0.5, reach)} intensity={churn ? 0.8 : oscillate(-2.4, 2.4, 0.04)}>
+      <Twirl center={follow(0.6, 0.5, reach)} intensity={churn ? 0 : oscillate(-2.4, 2.4, 0.04)}>
         <FlowField strength={0.16} detail={0.7} evolutionSpeed={(churn ? 0.7 : 0.25) * motion} seed={seed + 1}>
           <SimplexNoise
             scale={1.2}
@@ -174,7 +174,7 @@ export default function HeroShader({ theme, onLive }: HeroShaderProps) {
         movement="churn"
         seed={31}
       />
-      <Grain color={red} reach={strong ? 0.6 : 0.1} stops={stops} movement="spin" seed={12} />
+      <Grain color={red} opacity={theme === "dark" ? 0.7 : 1} reach={strong ? 0.6 : 0.1} stops={stops} movement="spin" seed={12} />
       {strong ? <InkTrail color={red} /> : <Wisp color={red} />}
     </Shader>
   );
