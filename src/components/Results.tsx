@@ -25,13 +25,13 @@ export default function Results() {
         <div className="sec-head">
           <span className="eyebrow">
             <b>Case study</b>
-            <span>$200 billion public tech company</span>
+            <span>Fortune 200 company</span>
           </span>
           <h2 id="results-title">A 30B model, <span className="hl">specialized for one agent,</span> beats the “frontier.”</h2>
           <p>
             We built the evaluation suite and model system behind a customer-facing enterprise agent used in a product with <b className="hl">50 million daily active users</b>. The agent takes
             spoken requests and completes multi-step work across workplace tools. It outperforms
-            OpenAI GPT-Audio-1.5 on every eval we defined.
+            OpenAI's on every eval we defined.
           </p>
         </div>
 

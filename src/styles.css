@@ -203,7 +203,7 @@ a {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.9s ease;
+  transition: opacity 2.5s ease;
 }
 .hero-art.live .hero-canvas {
   opacity: var(--hero-art-opacity);
@@ -681,7 +681,7 @@ a {
   gap: 10px;
   max-width: 30rem;
   font-family: var(--serif);
-  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  font-size: clamp(0.9375rem, 1.2vw, 1.125rem);
   line-height: 1.35;
 }
 .lexicon-word {
@@ -690,7 +690,7 @@ a {
   align-items: flex-start;
   gap: 0.06em;
   margin: 0;
-  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-size: clamp(1.25rem, 2.7vw, 2.2rem);
   font-weight: 500;
   line-height: 0.85;
   letter-spacing: -0.04em;
