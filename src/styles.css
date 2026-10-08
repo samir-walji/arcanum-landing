@@ -1445,3 +1445,44 @@ button {
 .footer-bottom {
   padding-bottom: env(safe-area-inset-bottom);
 }
+
+/* ?title=hover: white headline with a red dithered patch that follows the pointer. */
+@media (hover: hover) {
+  .hero h1.title-hover {
+    position: relative;
+    width: fit-content;
+    cursor: text;
+  }
+  .hero h1.title-hover::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    padding: inherit;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%224%22 height=%224%22 shape-rendering=%22crispEdges%22 fill=%22%23e02a3f%22%3E%3Crect x=%220%22 y=%220%22 width=%221%22 height=%221%22/%3E%3Crect x=%222%22 y=%220%22 width=%221%22 height=%221%22/%3E%3Crect x=%221%22 y=%221%22 width=%221%22 height=%221%22/%3E%3Crect x=%220%22 y=%222%22 width=%221%22 height=%221%22/%3E%3Crect x=%222%22 y=%222%22 width=%221%22 height=%221%22/%3E%3Crect x=%223%22 y=%223%22 width=%221%22 height=%221%22/%3E%3C/svg%3E"), linear-gradient(var(--red-deep), var(--red-deep));
+    background-size: 8px 8px, 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    image-rendering: pixelated;
+    animation: title-drift 0.175s linear infinite;
+    -webkit-mask-image: var(--mask, linear-gradient(transparent, transparent));
+    mask-image: var(--mask, linear-gradient(transparent, transparent));
+    pointer-events: none;
+  }
+}
+
+/* The grain in the hover patch drifts left to right, one pixel step at a time. */
+@keyframes title-drift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 8px 0, 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1.title-hover::after {
+    animation: none;
+  }
+}
