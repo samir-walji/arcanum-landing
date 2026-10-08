@@ -1227,7 +1227,7 @@ a {
 /* Hero title: the same dither as the case-study bars (deep red with brighter red
    pixels). The pixel colour is the dark-theme --red, written out because an SVG tile
    can't read CSS vars. */
-.hero h1 {
+.hero h1.title-red {
   width: fit-content;
   padding-right: 0.08em;
   color: transparent;

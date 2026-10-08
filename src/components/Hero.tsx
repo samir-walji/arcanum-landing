@@ -4,6 +4,9 @@ import { useTheme } from "../theme";
 
 const HeroShader = lazy(() => import("./HeroShader"));
 
+/** Add ?title=red to the URL to get the dithered red headline instead of plain white. */
+const TITLE_RED = new URLSearchParams(window.location.search).get("title") === "red";
+
 export default function Hero() {
   // "loading": plain background while the shader starts (no placeholder shape that would
   // then change). "fallback": the static CSS glow, only when WebGPU is unavailable.
@@ -20,7 +23,7 @@ export default function Hero() {
         </Suspense>
       </div>
       <div className="wrap hero-inner">
-        <h1 id="hero-title">Specific intelligence</h1>
+        <h1 id="hero-title" className={TITLE_RED ? "title-red" : undefined}>Specific intelligence</h1>
         <p className="lead">
           {TAGLINE_LINES.map((line) => (
             <span key={line}>{line}</span>
