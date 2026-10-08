@@ -23,7 +23,7 @@ export const comparison: ComparisonGroup[] = [
   {
     title: "Instruction following",
     rows: [
-      { name: "Acts on the right entity", us: 78.1, frontier: 56.2 },
+      { name: "Entity resolution", us: 78.1, frontier: 56.2 },
       {
         name: "Surfaces every option when ambiguous",
         note: "Instead of guessing one",
