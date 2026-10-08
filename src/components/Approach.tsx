@@ -4,7 +4,7 @@ const steps = [
   {
     label: "Benchmark",
     text: [
-      "Our forward deployed researchers and engineers work alongside your team, using our evals and model training infrastructure to build a sophisticated benchmark for your agent's use case.",
+      "Our **forward deployed researchers** and **engineers** work alongside your team, using our **evals** and **model training infrastructure** to build a sophisticated **benchmark** for your agent's use case.",
     ],
     parts: [
       {
@@ -16,7 +16,7 @@ const steps = [
   {
     label: "Model system",
     text: [
-      "Then we implement the best model system for it: trained models, harnesses, and routing, improved over time by continual learning loops.",
+      "Then we implement the best model system to hillclimb it: trained models, harnesses, and routing, improved over time by continual learning loops.",
       "You own the trained model weights and can run them in your own infrastructure, or we can host inference for you.",
     ],
     parts: [
@@ -35,6 +35,22 @@ const steps = [
     ],
   },
 ];
+
+/** The red highlights in the paragraphs are off by default; add ?highlights=on to show them. */
+const HIGHLIGHTS = new URLSearchParams(window.location.search).get("highlights") === "on";
+
+/** Wraps **marked** text in the red highlight used elsewhere on the page (when switched on). */
+function withHighlights(sentence: string) {
+  return sentence.split(/\*\*(.+?)\*\*/).map((part, i) =>
+    i % 2 === 1 && HIGHLIGHTS ? (
+      <span className="hl" key={i}>
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  );
+}
 
 export default function Approach() {
   return (
@@ -56,7 +72,7 @@ export default function Approach() {
               </p>
               <div className="flow-text">
                 {step.text.map((sentence) => (
-                  <p key={sentence}>{sentence}</p>
+                  <p key={sentence}>{withHighlights(sentence)}</p>
                 ))}
               </div>
               <ul className="flow-parts">
